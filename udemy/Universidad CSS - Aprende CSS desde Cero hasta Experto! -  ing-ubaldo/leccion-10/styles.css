@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    color: crimson;
+}
+
+div {
+    /* width: 400px; */
+    /* max-width: 400px; */ /* Este atributo es dinamico a diferencia de width, que es fijo. 
+                               Significa, "como mucho 400px", osea que puede ser menos */
+    /* width: 50%; */
+    max-width: 50%;
+    /* min-width: 160px; */  /* Descubri este atributo, es lo que estaba buscando para garantizar que no se me colapse el contenido
+                                cuando achico la ventana o hago demasiado zoom */
+
+    border: 3px solid firebrick;
+    margin: auto;
+    /* text-align: center; */   /* Si quiero centrar el texto dentro del div */
+}
+
+/* PRACTICA EXTRA - FUERA DE LA CLASE */
+body {
+    margin: 0;
+}
+
+p {
+    width: 50%;
+    text-align: justify;
+    margin: 5rem auto;
+}
