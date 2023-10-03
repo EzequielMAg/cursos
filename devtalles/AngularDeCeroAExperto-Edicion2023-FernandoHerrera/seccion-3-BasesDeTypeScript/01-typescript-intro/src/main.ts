@@ -3,6 +3,9 @@ import './style.css'
 //Con esta linea de import, lo que estamos haciendo es: requerir un modulo
 //Y un modulo digamos que es una agrupacion encapsulada de un procedimiento
 //*import './topics/01-basic-types.ts';
+// import './topics/02-object-interfaces.ts'
+// import './topics/03-functions.ts'
+import './topics/04-homework-types.ts'
 
 import typescriptLogo from './typescript.svg'
 import viteLogo from '/vite.svg'

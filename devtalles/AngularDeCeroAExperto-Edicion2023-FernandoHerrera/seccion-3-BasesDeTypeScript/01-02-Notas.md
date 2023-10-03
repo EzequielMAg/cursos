@@ -11,3 +11,7 @@ Pasos para crear el proyecto con vite:
     4. Entrar con el cmd dentro del directorio del proyecto.
     5. **npm install**
     6. **npm run dev** → Para levantar el servidor y poder visualizar el proyecto en un navegador.
+
+El proyecto creado es una aplicacion de vite, pero tecnicamente es un aplicacion de node, y sabemos esto porque tiene el archivo "package.json". El cual es un archivo en el que se describe globalmente el proyecto: nombre, proyecto privado, versio, scripts y dependencias instaladas.
+
+VITE es una herramienta que nos ayuda a hacer nuestra aplicacion rapidamente.
