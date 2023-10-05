@@ -1,0 +1,19 @@
+<!-- Mi primera expresion de angular: -->
+<h1> {{title}}</h1>
+<hr>
+
+<p>
+  Bienvenidos a Angular
+</p>
+
+<h3>Counter: {{ counter }} </h3>
+
+<!-- Aqui se le agrega un evento con los parentesis llamado "click" y llama a la FN "increaseBy()"-->
+<!-- Y angular sincroniza el .ts con este html. Esta pendiente de los valores, y me actualiza rapidamente el valor de counter -->
+<button (click)="increaseBy(1)">+1</button>
+<button (click)=" resetCounter()">Reset</button>
+
+<!-- *TAREA: hacer lo mismo que con el boton de incrementar valor, pero en este boton, debe disminuirlo -->
+<button (click)="decreaseBy(1)">-1</button>
+<hr>
+<!-- <app-counter></app-counter> -->
