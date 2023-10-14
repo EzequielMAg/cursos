@@ -19,12 +19,21 @@ export class HeroComponent {
   }
 
   //*TAREA: cambiarle el nombre y la edad al heroe a traves de botones y que se vea reflejado en la pagina
-  changeHero(value: string):void {
-    this.name = value;
+  changeHero():void {
+    this.name = "Spiderman";
   }
 
-  changeAge(newAge: number):void {
-    this.age = newAge;
+  changeAge():void {
+    this.age = 25;
+  }
+
+  resetValues() {
+    this.name = "iron-man";
+    this.age = 45;
+
+    /* document.querySelectorAll('h1')!.forEach(element => {
+      element.innerHTML = '<h1>Desde Angular</h1>'
+    }); */
   }
 
 }
