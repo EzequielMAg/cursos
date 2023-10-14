@@ -13,7 +13,7 @@ interface Details {
 
 
 // Ambas interfaces no hacen nada por si solas, pero nos van a permitir moldear un objeto
-// Otro comando: CTRL + . -> Nos aparece un desplegable con opciones de lo que el IDE puede autocompletar o hacer por nosotros
+//* Otro comando: CTRL + . -> Nos aparece un desplegable con opciones de lo que el IDE puede autocompletar o hacer por nosotros
 const audioPlayer: AudioPlayer = {
     audioVolume: 90,
     songDuration: 36,
@@ -40,8 +40,9 @@ console.log('Song: ' + song);
 //*const song = 'New Song';    //Supongamos que esta esta antes de la linea 34 y q no esta comentado xD
 
 //Ahi podemos hacer lo siguiente:
-const { song: anotherSong, songDuration: duration } = audioPlayer;    //Busca el atributo son en el objeto del lado derecho, y guarda su valor en 'anotherSong'
-
+const { song: anotherSong, songDuration: duration } = audioPlayer;    //Busca el atributo 'song' en el objeto 'audioPlayer', y guarda su valor en 'anotherSong'
+                                                                      //lo mismo para 'songDuration', pero lo guarda en la variable 'duration' :v.  
+                                                                      //* Con los dos puntitos, estamos diciendo "Guardame el valor en esta variable".
 console.log('Song: ' + anotherSong);
 console.log('Duration: ' + duration);
 
@@ -60,7 +61,7 @@ console.log('Author -> ' + anotherAuthor);
 const {
     // song:anotherSong2,
     // songDuration:duration2,
-    details:{author:anotherAuthor2}} = audioPlayer;
+    details: {author:anotherAuthor2}} = audioPlayer;
 console.log("Author --> " + anotherAuthor2);
 // Herrera dice: "Hay que priorizar la lectura de nuestro codigo. En el caso que tengamos dos codigos que hagan exactamente lo mismo,
 // las lineas anteriores no nos ganan mucho poder computacional, pero nos complican la existencia a la hora de leer el codigo. Sale mas
@@ -71,14 +72,16 @@ console.log("Author --> " + anotherAuthor2);
 const dbz: string[] = ['Goku', 'Vegeta', 'Trunks'];
 console.error('Personaje 3: ' + dbz[2]);
 
-const trunks = dbz[3] || 'No hay personaje';;
-console.error('Personaje 3: ' + trunks);
+const trunks = dbz[3] || "No hay personaje";
+console.error('Personaje 3: ' + trunks);    // Guarda el valor "No hay persona", porque TS detecta que accedimos a una posicion
+                                            // del arreglo en la que no hay nada, deberia poner "undefined" pero usa el 2do valor 
+                                            // que seteamos
 
 //* La desestructuracion en los objetos lo haciamos con llaves {} y con los arreglos lo hacemos con corchetes []
 const [p1, p2, p3]:string[] = dbz;
 console.log(p1, p2, p3);
 
-//Podemos desestructurar un arreglo, para obtener un elemento de una posificion especifica de esta forma
+//Podemos desestructurar un arreglo, para obtener un elemento de una posicion especifica de esta forma
 //Claro esta que si el arreglo es muy grande.. Ahi trabajariamos de otra forma
 const [ , , trunks2] = dbz;
 console.log(trunks2);

@@ -20,18 +20,19 @@ skills3 = ['Bash', 'Counter', 'Healing'];
 
 const strider = {
     name: 'Strider',    //En este objeto literal, no puedo poner el tipo de dato para obligar q este atributo sea siempre un string
-    //name:string: 'Strider',    //Esto nos tira error, no podemos hacerlo, tecnicamente, seria como rompera una regla de JS si definimos los tipos aqui
+    //name:string: 'Strider',    //Esto nos tira error, no podemos hacerlo, tecnicamente, seria como romper una regla de JS si definimos los tipos aqui
     hp: 100,
     skills: ['Bash', 'Counter']    
 }
 
-//*Para tipar de manera estricta este personaje, una forma, son las interfaces|
-//Cuando se transpila el codigo Ts a Js, las interfaces representan 0 lineas de codigo de js
+//*Para tipar de manera estricta este personaje, una forma, son las interfaces
+//Cuando se transpila el codigo Ts a Js, las interfaces representan 0 lineas de codigo de js, porque las interfaces no existen en JS
 interface Character {
     name: string,
     hp: number,
     skills: string[],
-    hometown?: string;    //De esta forma declaramos un atributo opcional.
+    hometown?: string;    //De esta forma declaramos un atributo opcional, es decir que todo objeto que implemente la interfaz, puede optar por
+                          //no usar este atributo, y despues si quierem puede agregarlo y/o quitarlo nuevamente.
 }
 
 //De esta forma decimos que el objeto literal va a implementar la interface 'Character'

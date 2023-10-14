@@ -1,9 +1,10 @@
 /* 
-    TS trata de inferir varias cosas luego de declarar la siguiente funcion
-    Como que: no tiene argumentos y que no retorna nada (:void entre los () y la lalve de apertura)
+    TS trata de inferir varias cosas luego de declarar la siguiente funcion addNumbers()
+    Como: que no tiene parametros y que no retorna nada (:void entre los () y la llave de apertura)
 
-    :void, significa que implicitamente no hay un void en la funcion, porque en JS implicitamente, 
-    cuando una funcion no retornaba nada, siempre hay un return undefined;
+    Tecnicamente, en JS, toda funcion que no retorna nada, tiene implicitamente un "return undefined".
+    Y no es lo mismo retornar void que undefined. Si vemos que retorna void, en Ts, es porque implicitamente
+    no retorna undefined
 
     Para observar cada una de estas cosas en las que infiere Ts, dejar el cursos sobre el nombre de la funcion/variable
 */
@@ -11,9 +12,9 @@
 function addNumbers() {
 }
 
-//Cuando no declaramos el tipo de dato en Ts, no puede inferir en ningun tipo de dato y le pone tipo de dato :any, 
-//es decir que puede tomar cualquier valor. Siempre tratemos de especificar el tipo de dato, y si no sabemos que tipo
-//de dato es, pongamosle :any explicitamente
+// Cuando no declaramos el tipo de dato en Ts, Ts no puede inferir en ningun tipo de dato y le pone tipo de dato :any, 
+// es decir que puede tomar cualquier valor. 
+//* Siempre tratemos de especificar el tipo de dato, y si no sabemos que tipo de dato es, pongamosle :any explicitamente
 /* function addNumbers2(a, b) {
 } */
 
@@ -34,7 +35,7 @@ const result: number = addNumbers3(5, 2);
 //console.log({ result: result });
 
 
-//Arrow function
+//* Arrow function
 const addNumbersArrow = (a: number, b: number): string => {
     return `${a + b}`;
 }
@@ -46,13 +47,18 @@ const result2: string = addNumbersArrow(2, 75);
 //* puede carrear el error a demas lugares del programa
 
 // En la siguiente Fn se tiene un parametro obligatorio de tipo number, el 2° parametro es opcional, osea si queremos no lo pasamos
-// y el 3° parametro es opcional tambien y ademas tiene un valor por default+
-// Siempre se aconseja seguir ese orden de parametros, primero los obligatios, luego los opcionales y finalmente los que tienen
-// un valor por default
+// y el 3° parametro es opcional tambien y ademas tiene un valor por default
+//* Siempre se aconseja seguir ese orden de parametros, primero los obligatorios, luego los opcionales y finalmente los que tienen
+//* un valor por default
 function multiply(firstNumber: number, secondNumber?: number, base: number = 2): number {
     return firstNumber * base;
 }
 
+// Ts a diferencia de Js, te obliga a pasar la cantidad de parametros definimos en la firma de la funcion
+// Pero en la fn anterior se esta declarando que los ultimos 2 parametros son opcionales. El ultimo parametro no se lo declara opcional, pero queda opcional
+// por inferencia de Ts. Ya que al parecer, todo atributo despues de uno opcional, tambien va a ser opcional. Y ahora que lo pienso tiene sentido:
+// porque si decidis no poner el segundo parametro, como le explicas que le estas pasando el 3° y no el 2° argumento? Entonces, Ts como que te dice
+// - Si no vas a poner el opcional.. ya esta, no pongas ninguno mas.. Por eso la recomendacion de la linea 51 y 52.
 const multiplyResult = multiply(5);
 //console.log(multiplyResult);
 

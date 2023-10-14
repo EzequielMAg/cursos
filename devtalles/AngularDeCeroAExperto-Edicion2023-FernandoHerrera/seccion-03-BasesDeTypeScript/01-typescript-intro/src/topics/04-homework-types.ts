@@ -58,5 +58,5 @@ export {};
    
 *   ALT + cursor sobre nombres de funciones/interface        -> Nos tira la estructura de la clase o interface
 *   clic en el identificador de alguna variable/FN, etc + F2 -> Nos deja sobreescribir el nombre/identificador y lo replica
-                                                                en todos los lados que aparece
+*                                                               en todos los lados que aparece
 */

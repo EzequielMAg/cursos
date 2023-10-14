@@ -1,6 +1,6 @@
 ##Trabajando dentro del directorio "./app"
 
-Aqui dentro tenemos varios archivos, los cuales algunos pertenecen a un componente llamado "app-comonent"
+Aqui dentro tenemos varios archivos, los cuales algunos pertenecen a un componente llamado "app-component"
 - app.component.css
 - app.component.html
 - app.component.spect.ts  → archivo de pruebas, para testing

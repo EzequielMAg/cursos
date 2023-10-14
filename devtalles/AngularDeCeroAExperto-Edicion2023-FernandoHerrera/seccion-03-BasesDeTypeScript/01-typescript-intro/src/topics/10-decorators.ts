@@ -4,9 +4,9 @@
 
     Los decoradores no son mas que funciones especiales que se adjuntan a determinado objetos.
 
-*   El 99% de cosas que vamos a hacer en Angular, o que estan construidad en Agnular son clases, lo unico que
+*   El 99% de cosas que vamos a hacer en Angular, o que estan construidad en Angular son clases, lo unico que
     varia es el decorador que se le pone, para que tal clase, sea un servicio, un modulo, un componente, una 
-    directiva personailazada, etc, todo todo siguen siendo simples clases, lo unico que cambia es el decorador
+    directiva personalizada, etc, todo todo siguen siendo simples clases, lo unico que cambia es el decorador
 
 *   Los decoradores no son mas que funciones que pueden modificar el comportamiento de clases/objetos/atributos/metodos
 *   para que sea algo en particular, agregarle cierta funcionalidad. 

@@ -6,7 +6,7 @@ export class Person {
     constructor(
         public name:string, 
         private address: string = 'No address',  //Como le puse un valor por default, el parametro pasa a ser opcional en el constructor
-        ) {
+        ) {                                      // Ts hace esto, y tiene sentido, porque si no se pasa el argumento, se usa tal valor default.
     /* constructor() {
         this.name = "Fernando";
         this.address = "New York"; */
@@ -43,7 +43,7 @@ export class Hero extends Person {
 *       No se recomienda tener mas de 3 niveles de herencia.. Reduce la legibilidad. Se va a priorizar la COMPOSICION por sobre la herencia.
 */
 
-//Vamos a evitar tener la herencia de Persona en Heroe.. Haremos composicion. Para no comentar la clase "Hero" anterior, hare "Hero2" y "Person2" x varios cambios
+//Vamos a evitar tener la herencia de Person en Heroe.. Haremos composicion. Para no comentar la clase "Hero" anterior, hare "Hero2" y "Person2" x varios cambios
 
 export class Person2 {
 

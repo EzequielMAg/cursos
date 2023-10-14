@@ -15,7 +15,7 @@ const PI = 3.14;
 
 //Parte del objetivo de TS, es que cuando nosotros hacemos el build de produccion, es decir, tomamos nuestros codigo y 
 //generamos esos archivos de js, html y css, crea una aplicacion con puro JS, lo cual nos permite a nosotros cambiar a cual 
-//version objetivo queremos del ECMAScript, oseam si queremos los ultimos estandares o queremos una version anterior mas compatible.
+//version objetivo queremos del ECMAScript, osea si queremos los ultimos estandares o queremos una version anterior mas compatible.
 // Y transforma todo el codigo completamente a esa version elegida.
 
 
