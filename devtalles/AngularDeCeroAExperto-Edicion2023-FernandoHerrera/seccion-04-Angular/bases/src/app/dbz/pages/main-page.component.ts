@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DbzService } from '../services/dbz.service';
 import { Character } from '../interfaces/character.interface';
 
 @Component({
@@ -7,39 +8,22 @@ import { Character } from '../interfaces/character.interface';
 })
 
 export class MainPageComponent {
-  /*
-  *   Queremos mandar este arreglo de personajes, al componente "hijo": 'list.component.ts'
-  */
-  public characters: Character[] = [{
-    name: 'Krillin',
-    power: 2500
-  }, {
-    name: 'Goku',
-    power: 9500
-  }, {
-    name: "Vegeta",
-    power: 7500
-  }, {
-    name: "Yancha",
-    power: 3000
-  }, {
-    name: "Piccolo",
-    power: 6000
-  }, {
-    name: "Ten Shin Han",
-    power: 5000
-  }];
 
-  //* Metodo que va a recibir el personaje emitido por el componente hijo
+  //* Inyectando un servicio.
+  constructor(private dbzService: DbzService) {
+
+  }
+
+  get characters(): Character[] {
+    return [...this.dbzService.characters];
+  }
+
+  onDeleteCharacter(id: string): void {
+    this.dbzService.onDeleteCharacterById( id );
+  }
+
   onNewCharacter(character: Character): void {
-
-    this.characters.push(character);
+    this.dbzService.addCharacter( character );
   }
-
-  onDeleteCharacter(index: number): void {
-
-    this.characters.splice(index, 1);
-  }
-
 
 }

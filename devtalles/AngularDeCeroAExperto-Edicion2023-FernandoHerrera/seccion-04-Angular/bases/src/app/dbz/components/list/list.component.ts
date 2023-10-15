@@ -7,25 +7,26 @@ import { Character } from '../../interfaces/character.interface';
   /* styleUrls: ['./list.component.css'] */
 })
 export class ListComponent {
+
+
   /*
   * Con el decorador @Input, de @angular/core, podemos recibir informacion desde afuera..
   * Estamos diciendo que lo que recibe, se va a almacenar sobre este atributo, arreglo de caracteres
   */
- @Input()
+  @Input()
   public characterList: Character[] = [{
-      name: 'Trunks',
-      power: 10
-    }
+    name: 'Trunks',
+    power: 10
+  }
   ]
 
   @Output()
-  public onDeleteByIndex: EventEmitter<number> = new EventEmitter();
+  public onDeleteById: EventEmitter<string> = new EventEmitter();
 
-  onDeleteCharacter(index: number): void {
+  onDeleteCharacter(id?: string ): void {
 
-    //TODO: Emitir el ID del personaje
-    console.log(index);
-    this.onDeleteByIndex.emit(index);
+    if(!id) return; //Si no tengo un ID → NO retornes/emitas nada.
+    this.onDeleteById.emit(id);
   }
 
 }
