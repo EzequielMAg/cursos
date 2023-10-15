@@ -1,0 +1,42 @@
+<h4>Listado</h4>
+
+<ul class="list-group">
+
+  <p *ngIf="characterList.length === 0" class="text-center border py-2"><strong>¡LISTA VACIA!</strong></p>
+  <!-- Aqui, 'index' es un objeto del ngFor, y lo estamos asignando a la variable 'i' para obtener el indice actual
+       de cada iteracion -->
+  <li *ngFor="let character of characterList;
+      let i = index;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd"
+
+      class="list-group-item d-flex justify-content-between align-items-center"
+
+      [ngClass]="{
+        'list-group-item-primary': isEven,
+        'list-group-item-dark' : isLast,
+      }">
+      <!-- Los corchetes significan.. Darle el control a Angular y lo que este entre comillas, puede ser codigo JS -->
+
+
+      <div>
+        <span class="text-primary"> {{ i + 1 }}. </span>
+        <strong>Name: </strong>
+        <span> {{ character.name }} - </span>
+        <strong>Power: </strong>
+        <span> {{ character.power }} </span>
+
+        <!-- <span>| Es el pimero {{ i === 0 }} </span>
+         <span>| Es el pimero {{ isFirst }} </span>
+         <span>| Es el ultimo {{ i === characterList.length - 1 }} </span>
+         <span>| Es el ultimo {{ isLast }} </span>
+
+         <span>| Posicion par: {{ isEven }} </span>
+         <span>| Posicion impar: {{ isOdd }} </span> -->
+      </div>
+
+      <button  (click)="onDeleteCharacter( i )" class="btn btn-danger">X</button>
+  </li>
+</ul>

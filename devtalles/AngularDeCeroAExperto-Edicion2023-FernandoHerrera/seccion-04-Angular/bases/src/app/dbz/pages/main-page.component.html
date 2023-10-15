@@ -1,0 +1,20 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+
+<div class="row">
+
+  <div class="col">
+    <!--* Ya definido el @Input, donde se va a almacenar la informacion, de esta forma la enviamos: -->
+   <dbz-list [characterList]="characters"
+             (onDeleteByIndex)="onDeleteCharacter($event)"></dbz-list>
+  </div>
+
+  <div class="col">
+    <!--* Se escucha que el componente hijo emita un caracter a traves de tal metodo (izq), y lo recibo con $event
+    <!--* para pasarselo al metodo con el mismo nombre declarado en el componente padre.
+      -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+  </div>
+
+</div>
