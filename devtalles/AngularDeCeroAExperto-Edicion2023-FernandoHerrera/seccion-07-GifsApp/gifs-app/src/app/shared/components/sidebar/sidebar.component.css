@@ -1,0 +1,22 @@
+#sidebar {
+
+  height: 100vh;
+  /** VH significa viewport height (altura del dispositivo).
+      (traduccion estricta al español: "altura de la ventana gráfica" o simplemente "altura de la ventana".)
+      También funciona como porcentaje, especificar 10vh es equivalente a ocupar 10% de la altura visible de la pantalla.
+      Dado que tiene asignado "100vh" es el 100% de la pantalla
+
+      FUENTE:
+      https://www.freecodecamp.org/espanol/news/aprende-unidades-de-medidad-css-em-rem-vh-y-vw-con-ejemplos-de-codigos/#:~:text=VH%20significa%20viewport%20height%20(altura,Mira%20esta%20demostraci%C3%B3n.%3F&text=Si%20miras%20cuidadosamente%20puedes%20ver,la%20altura%20de%20la%20pantalla. */
+
+  width: 250px;
+
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
+.padding {
+  padding: 48px;
+}
