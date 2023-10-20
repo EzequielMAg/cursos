@@ -1,11 +1,18 @@
-
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
+
 
 @Injectable({ providedIn: 'root' })
 export class GifsService {
 
   // En este atributo se van a guardar todas las busquedas que se van haciendo
   private _tagsHistory: string[] = [];
+  private apiKey:       string = "hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk";
+  private serviceUrl:   string = 'https://api.giphy.com/v1/gifs';
+
+  //! Inyectamos el cliente/servicio del modulo que importamos para hacer peticiones HTTP en app.module
+  constructor(private http: HttpClient) { }
+
 
 
   get tagsHistory(): string[] {
@@ -21,11 +28,36 @@ export class GifsService {
     // Mejor sigo este camino y despues lo evalúo.
   }
 
+  //async searchTag(tag: string): Promise<void> {
   searchTag(tag: string): void {
 
     if (tag.length === 0) return;
 
     this.organizeHistory(tag);
+
+    /* // 1º forma
+    fetch('https://api.giphy.com/v1/gifs/search?api_key=hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk&q=valorant&limit=10')
+    .then( resp => resp.json() )
+    .then( data => console.log(data) ); */
+
+    /* // 2° forma
+    const resp = await fetch('https://api.giphy.com/v1/gifs/search?api_key=hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk&q=valorant&limit=10')
+    const data = await resp.json();
+    console.log(data); */
+
+    // De esta forma podemos agrupar query params
+    const params = new HttpParams()
+    .set('api_key', this.apiKey)
+    .set('limit', '10')
+    .set('q', tag);
+
+    //* FORMA PODEROSA de Angular para hacer peticiones HTTP
+    this.http.get(`${this.serviceUrl}/search`, { params })
+      .subscribe(resp => {
+
+        console.log(resp);
+      });
+
   }
 
   //Metodo para validaciones
@@ -35,8 +67,8 @@ export class GifsService {
     tag = tag.toLowerCase();
 
     // Para eliminar del arreglo el tag que este repetido.
-    if(this._tagsHistory.includes(tag)) {
-      this._tagsHistory = this._tagsHistory.filter( oldTag => oldTag !== tag );
+    if (this._tagsHistory.includes(tag)) {
+      this._tagsHistory = this._tagsHistory.filter(oldTag => oldTag !== tag);
     }
 
     this._tagsHistory.unshift(tag); // Agrega el tag al inicio
