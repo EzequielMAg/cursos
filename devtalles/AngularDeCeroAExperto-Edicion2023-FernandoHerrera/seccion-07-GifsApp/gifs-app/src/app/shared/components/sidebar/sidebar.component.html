@@ -35,6 +35,7 @@
                            No hace falta usarlo junto con la clase "list-group-item", pero va a quedar feito el boton jajaj
                            Hay que combinarlos!
  -->
+
 <div class="bg-dark border-end p-3" id="sidebar">
 
   <h3 class="text-light">GifsApp</h3>
@@ -47,16 +48,13 @@
 
   </div> -->
 
-  <div class="list-group list-reset">
+  <div *ngFor="let tag of tags" class="list-group list-reset py-1">
+
     <button class="list-group-item list-group-item-action">
-      Valorant
+      <!-- {{ tag | uppercase }} --> <!-- * Transforma el string en MAYUSCULAS. Pero sin modificar la data real, con el pipe | -->
+      {{ tag | titlecase }} <!-- vuelve Mayuscula solo a la primera letra de las palabras. Tambien usando el pipe  -->
     </button>
-    <button class="list-group-item list-group-item-action">
-      Valorant
-    </button>
-    <button class="list-group-item list-group-item-action">
-      Valorant
-    </button>
+
   </div>
 
 </div>
