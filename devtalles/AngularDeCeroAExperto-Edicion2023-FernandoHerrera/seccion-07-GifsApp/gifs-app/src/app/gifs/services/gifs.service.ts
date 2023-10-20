@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
+import { Gif, SearchResponse } from './../interfaces/gifs.interfaces';
+
 
 @Injectable({ providedIn: 'root' })
 export class GifsService {
 
+  // Va  contener toda la lista de nuestros gifs
+  public gifList: Gif[] = [];
+
   // En este atributo se van a guardar todas las busquedas que se van haciendo
   private _tagsHistory: string[] = [];
-  private apiKey:       string = "hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk";
-  private serviceUrl:   string = 'https://api.giphy.com/v1/gifs';
+  private apiKey: string = "hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk";
+  private serviceUrl: string = 'https://api.giphy.com/v1/gifs';
 
   //! Inyectamos el cliente/servicio del modulo que importamos para hacer peticiones HTTP en app.module
   constructor(private http: HttpClient) { }
@@ -47,15 +52,18 @@ export class GifsService {
 
     // De esta forma podemos agrupar query params
     const params = new HttpParams()
-    .set('api_key', this.apiKey)
-    .set('limit', '10')
-    .set('q', tag);
+      .set('api_key', this.apiKey)
+      .set('limit', '10')
+      .set('q', tag);
 
     //* FORMA PODEROSA de Angular para hacer peticiones HTTP
-    this.http.get(`${this.serviceUrl}/search`, { params })
-      .subscribe(resp => {
+    this.http.get<SearchResponse>(`${this.serviceUrl}/search`, { params })
+      .subscribe((resp) => {
 
-        console.log(resp);
+        this.gifList = resp.data;
+
+        console.log( { gifs: this.gifList });
+
       });
 
   }
