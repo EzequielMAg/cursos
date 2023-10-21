@@ -17,7 +17,11 @@ export class GifsService {
   private serviceUrl:   string = 'https://api.giphy.com/v1/gifs';
 
   //! Inyectamos el cliente/servicio del modulo que importamos para hacer peticiones HTTP en app.module
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+    this.loadLocalStorage();
+    console.log("Gifs service Ready");
+  }
 
 
 
@@ -63,9 +67,7 @@ export class GifsService {
       .subscribe((resp) => {
 
         this.gifList = resp.data;
-
         console.log( { gifs: this.gifList });
-
       });
 
   }
@@ -86,6 +88,27 @@ export class GifsService {
     // Limita el historial a 10 elementos
     this._tagsHistory = this._tagsHistory.splice(0, 10);
 
+    this.saveLocalStorage();
+  }
+
+  private saveLocalStorage(): void {
+    localStorage.setItem('history', JSON.stringify(this._tagsHistory)); //JSON.stringify: convierte un objeto en string
+  }
+
+  private loadLocalStorage():void {
+
+    // Si no encuentra ninguno objeto en el LocalStorage, no hacemos nada
+    if( !localStorage.getItem('history' )) return;
+
+    // Si pasa para aca, tenemos data
+    this._tagsHistory = JSON.parse( localStorage.getItem('history')! );
+    /* Se transforma el string a lo que necesitemos, porq retorna 'any' | undefined.
+       y se usa el operador 'not null acceptor operator' ya que aunque hayamos validado
+       que en tal punto ya no es null, Ts igual nos manda el mensaje de error.*/
+
+    //if(this._tagsHistory.length > 0)
+    if(this._tagsHistory.length === 0) return;
+    this.searchTag(this._tagsHistory[0]);
   }
 
 }

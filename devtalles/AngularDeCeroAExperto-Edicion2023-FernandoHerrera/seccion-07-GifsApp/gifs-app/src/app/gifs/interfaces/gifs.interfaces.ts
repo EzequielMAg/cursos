@@ -4,8 +4,6 @@ export interface SearchResponse {
   data:       Gif[];
   pagination: Pagination;
   meta:       Meta;
-  patito: string;
-  perrito: number;
 }
 
 export interface Gif {

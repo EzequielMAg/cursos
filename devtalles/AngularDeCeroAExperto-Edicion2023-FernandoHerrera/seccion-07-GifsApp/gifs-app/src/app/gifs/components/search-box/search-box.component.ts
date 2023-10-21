@@ -33,6 +33,6 @@ export class SearchBoxComponent {
     this.gifsService.searchTag( newTag );
     this.taginput.nativeElement.value =  ''; // Limpiamos la caja de texto, sino se estaria concatenando las busquedas...
 
-    console.log( { newTag } );
+    /* console.log( { newTag } ); */
   }
 }

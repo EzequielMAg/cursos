@@ -1,7 +1,7 @@
 ## Peticion Http 
-Vvamos a realziar una peticion Http a este endPoint:
+Vamos a realziar una peticion Http a este endPoint:
 ``https://api.giphy.com/v1/gifs/search?api_key=hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk&q=valorant&limit=10``
-Y vamos a traer la data del ednpoint a nuestra aplicacion.
+Y vamos a traer la data del endpoint a nuestra aplicacion.
 - Hay varias formas para hacer esto "como todo en la vida". Angular ya viene con su propio paquete y componente para hacer peticiones Http basado en observables.
 <br>
 
@@ -18,6 +18,8 @@ Podemos usar las formas anteriores para hacer una peticion Http, pero posiblemen
 - ``import { HttpClientModule } from "@angular/common/http";``
 
 - Y tambien lo agregamos, ya que es un modulo, en los imports → "HttpClientModule".
+
+- Esto nos habilita a poder usar todo lo que tal modulo exporte.
 
 - Luego en el GifService:
  <pre>
