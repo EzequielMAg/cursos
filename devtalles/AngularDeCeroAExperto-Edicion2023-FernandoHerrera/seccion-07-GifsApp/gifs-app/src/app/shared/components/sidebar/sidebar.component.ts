@@ -8,6 +8,7 @@ import { GifsService } from 'src/app/gifs/services/gifs.service';
 })
 export class SidebarComponent {
 
+  //! Aca inyectamos el servicio para poder mostrar los gifs buscados en el sidebar
   constructor(private gifsService: GifsService) { }
 
   get tags(): string[] {

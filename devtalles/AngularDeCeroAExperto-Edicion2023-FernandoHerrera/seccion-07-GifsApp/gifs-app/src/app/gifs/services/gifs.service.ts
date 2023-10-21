@@ -7,13 +7,14 @@ import { Gif, SearchResponse } from './../interfaces/gifs.interfaces';
 @Injectable({ providedIn: 'root' })
 export class GifsService {
 
-  // Va  contener toda la lista de nuestros gifs
+  // Va  contener toda la lista de nuestros gifs, la response de la consulta Http
   public gifList: Gif[] = [];
 
   // En este atributo se van a guardar todas las busquedas que se van haciendo
   private _tagsHistory: string[] = [];
-  private apiKey: string = "hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk";
-  private serviceUrl: string = 'https://api.giphy.com/v1/gifs';
+
+  private apiKey:       string = "hsfozpJhEbcp802YIOc1Ka4Ydkz4pIgk";
+  private serviceUrl:   string = 'https://api.giphy.com/v1/gifs';
 
   //! Inyectamos el cliente/servicio del modulo que importamos para hacer peticiones HTTP en app.module
   constructor(private http: HttpClient) { }
@@ -32,6 +33,7 @@ export class GifsService {
     // Tendria que crear otro getter, uno para acceder a la referencia original y otro para crear copias.
     // Mejor sigo este camino y despues lo evalúo.
   }
+
 
   //async searchTag(tag: string): Promise<void> {
   searchTag(tag: string): void {
