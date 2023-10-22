@@ -1,6 +1,6 @@
 #sidebar {
 
-  height: 100vh;
+  /* height: 100vh; */
   /** VH significa viewport height (altura del dispositivo).
       (traduccion estricta al español: "altura de la ventana gráfica" o simplemente "altura de la ventana".)
       También funciona como porcentaje, especificar 10vh es equivalente a ocupar 10% de la altura visible de la pantalla.
@@ -11,6 +11,11 @@
 
   width: 250px;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  /* z-index: 1; */
 }
 
 .red-border {

@@ -2,3 +2,9 @@
   border: 1px solid red;
 }
 
+.leaveRoomForSidebar {
+  position: absolute;
+  top: 0;
+  left: 250px;
+  bottom: 0;
+}

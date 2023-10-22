@@ -7,6 +7,11 @@ import { Gif, SearchResponse } from './../interfaces/gifs.interfaces';
 @Injectable({ providedIn: 'root' })
 export class GifsService {
 
+  //Atributos extras agregados por mi
+  private MAX_CAT_TAGS:number = 12;
+  private MAX_CAT_GIFS:number = 100;
+
+
   // Va  contener toda la lista de nuestros gifs, la response de la consulta Http
   public gifList: Gif[] = [];
 
@@ -24,7 +29,6 @@ export class GifsService {
   }
 
 
-
   get tagsHistory(): string[] {
     //return [...this._tagsHistory]; // Sabemos que los arreglos se pasan por referencia. Aca el prof usa el operador spred para crear
     // otra referencia del arreglo (una copia del mismo en otro espacio de memoria).
@@ -37,7 +41,6 @@ export class GifsService {
     // Tendria que crear otro getter, uno para acceder a la referencia original y otro para crear copias.
     // Mejor sigo este camino y despues lo evalúo.
   }
-
 
   //async searchTag(tag: string): Promise<void> {
   searchTag(tag: string): void {
@@ -59,7 +62,7 @@ export class GifsService {
     // De esta forma podemos agrupar query params
     const params = new HttpParams()
       .set('api_key', this.apiKey)
-      .set('limit', '10')
+      .set('limit', `${this.MAX_CAT_GIFS}`)
       .set('q', tag);
 
     //* FORMA PODEROSA de Angular para hacer peticiones HTTP
@@ -67,7 +70,7 @@ export class GifsService {
       .subscribe((resp) => {
 
         this.gifList = resp.data;
-        console.log( { gifs: this.gifList });
+        /* console.log( { gifs: this.gifList }); */
       });
 
   }
@@ -86,7 +89,7 @@ export class GifsService {
     this._tagsHistory.unshift(tag); // Agrega el tag al inicio
 
     // Limita el historial a 10 elementos
-    this._tagsHistory = this._tagsHistory.splice(0, 10);
+    this._tagsHistory = this._tagsHistory.splice(0, this.MAX_CAT_TAGS);
 
     this.saveLocalStorage();
   }
