@@ -78,11 +78,16 @@ Aun no estamos usando todo las rutas que definimos anteriormente.
 
 ![Alt text](02-imgs-routerModule-paginasSPA/image-12.png)
 
+
 Importado de:
+
 ![Alt text](02-imgs-routerModule-paginasSPA/image-13.png)
-<br>
+
+
 2. Ahora, como este modulo de enrutamiento, es el principal de la aplicacion, usamos '.forRoot' y le pasamos la direccion de nuestra rutas definidas:
+
 ![Alt text](02-imgs-routerModule-paginasSPA/image-14.png)
+
 
 > Despues cuando estemos trabajando con las rutas en otros modulos, en esos usariamos un 'forCHild()'.
 
@@ -112,7 +117,9 @@ Automaticamente vemos lo sig:
 
 - Si escribimos cualquier cosa nos redireccionara al home como lo hemos configurado.
 
+
 Luego con el siguiente elemento especial del angular router, en el file 'app.component.html': 
+
 ![Alt text](02-imgs-routerModule-paginasSPA/image-18.png)
 
 
