@@ -1,0 +1,13 @@
+<input
+  type="text"
+  [placeholder]="placeholder"
+  class="form-control"
+  #txtInput
+
+  (keyup.enter)="emitValue( txtInput.value )"
+  >
+  <!-- (keyup.enter)="emitValue()"  -->
+  <!--
+    * Se podria pasar directamente el valor ingresado por el usuario, por argumento en el metodo
+      Aunque no entiendo aca, por que no usa la palabra ".nativeElement." entre txtInput y value.
+      (keyup.enter)="emitValue( txtInput.value )" -->

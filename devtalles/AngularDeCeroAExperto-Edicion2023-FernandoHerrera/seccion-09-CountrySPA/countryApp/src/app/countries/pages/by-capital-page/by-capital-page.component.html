@@ -1,1 +1,25 @@
-<p>by-capital-page works!</p>
+<h2>Por capital</h2>
+<hr>
+
+<div class="row">
+
+  <div class="col">
+
+    <!-- SearchBox -->
+    <!--* Se escucha lo que emite onValue, y cuando emita algo, se llama a tal metodo de la derecha y se la pasa el valor emitido -->
+    <shared-search-box
+      (onValue)="searchByCapital($event)"
+      placeholder="Buscar por capital"></shared-search-box>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col">
+
+    Tabla de resultados
+
+
+  </div>
+</div>
