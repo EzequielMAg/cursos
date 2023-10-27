@@ -39,7 +39,8 @@ Los dos componentes creados, los usamos aqui:
 Es decir, segun el url, queremos ver un componente u otro. Principalmente, queremos ver el homePage, pero si cliqueamos en x lugar, cambiar al componente AboutPage.
 <br>
 
-## Definiendo configuracion de rutas
+# Creando file de routing de forma totalmente manual
+## Definiendo configuracion de rutas 
 La forma de configurar esto fue cambiando entre las distintas versiones de Angular. Veremos la forma actual recomendada a partir de 2023.
 
 Creamos el siguiente archivo dentro de nuestra carpeta 'app':
