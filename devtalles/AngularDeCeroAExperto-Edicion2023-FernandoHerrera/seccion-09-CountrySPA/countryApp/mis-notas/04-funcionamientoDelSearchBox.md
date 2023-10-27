@@ -20,4 +20,5 @@
       @Output()
       public onValue: EventEmitter<string> = new EventEmitter();
 </pre>
+
 ![Alt text](image.png)
