@@ -32,7 +32,7 @@ const returnChildrenNumber = (passenger: Passenger): number => {
     const howManyChildren = passenger.children?.length || 0;
     
     // Tambien esta el operador !, que depende de donde lo usemos puede ser la negacion, pero aqui en la propiedad se llama
-    // "not null acceptor operator": y este es como decirle a Ts "confia en mi, nunca vas a recibir un nulo en ese punto".
+    // "non-null assertion operator": y este es como decirle a Ts "confia en mi, nunca vas a recibir un nulo en ese punto".
     //*const howManyChildren = passenger.children!.length;
 
     console.log(passenger.name, howManyChildren);
