@@ -86,3 +86,11 @@ console.log( lat, lng );
 const { latlng:latlng2 } = usContext2( persona );
 const { lat:lat2, lng:lng2 } = latlng2;
 console.log(lat2, lng2);
+
+
+
+//* Mas ejemplos en: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+const { a, b, ...rest } = { a: 100, b: 200, c: 30, d: 40 };
+console.log(a); // 10
+console.log(b); // 20
+console.log(rest); // {c: 30, d: 40}
