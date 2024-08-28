@@ -12,7 +12,7 @@ import heroes, { owners } from '../data/heroes';
 
 console.log( heroes );
 
-const getHeroeById = (id) => {
+export const getHeroeById = (id) => {
     return heroes.find(element => element.id === id );
 }
 
@@ -48,9 +48,9 @@ const getHeroeById3 = (id) => {
 // VA.. Terminando de ver el video, en verdad la dejo asi:
 const getHeroeById4 = (id) => heroes.find( (heroe) => heroe.id === id);
 
-const getHeroesByOwner = ( owner ) => heroes.filter( (heroe) => heroe.owner === owner )
-console.log( getHeroesByOwner("DC"));
+export const getHeroesByOwner = ( owner ) => heroes.filter( (heroe) => heroe.owner === owner )
+/* console.log( getHeroesByOwner("DC"));
 console.log( getHeroesByOwner("Marvel"));
-console.log( getHeroesByOwner("melectro18arvel"));
+console.log( getHeroesByOwner("melectro18arvel")); */
 
 console.log( owners );
