@@ -1,0 +1,1 @@
+rafc + tab -> para generar un componente React rapidamente con los snippets instalados.

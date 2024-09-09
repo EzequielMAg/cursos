@@ -1,0 +1,28 @@
+html, body {
+    background-color: #21232A;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    padding: 70px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    background-color: rgb(52, 91, 219);
+}
+
+.display-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.expand-button {
+    width: 100%;
+}
+
+.reduce-container {
+    width: 50%;
+}
