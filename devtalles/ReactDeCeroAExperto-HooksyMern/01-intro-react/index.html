@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <!-- Cargat React -->
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
@@ -13,13 +14,14 @@
     
     <div id="root"></div>
 
-
-
+    <!-- Si no ponemos el type=..., no vamos a poder usar el codigo HTML dentro del script (entorno JS).
+     Babel se va a encargar de hacer la traduccion de un codigo moderno a un codigo que es soportado por el navegador web. -->
     <script type="text/babel">
 
-        const divRoot = document.querySelector('#root');
         const name = 'Goku';
-        const h1Tag = <h1>Hola soy { name } </h1>;
+        const h1Tag = <h1>Hola soy { name } </h1>;  
+        
+        const divRoot = document.querySelector('#root');
         
         ReactDOM.render( h1Tag, divRoot);
 
