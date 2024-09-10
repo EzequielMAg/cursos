@@ -5,3 +5,7 @@
 [submodule "devtalles/AngularDeCeroAExperto-Edicion2023-FernandoHerrera/seccion-04-05-06-Angular/bases"]
     path = devtalles/AngularDeCeroAExperto-Edicion2023-FernandoHerrera/seccion-04-05-06-Angular/bases
     url = https://github.com/EzequielMAg/angular-primeros-pasos.git
+
+[submodule "devtalles/AngularDeCeroAExperto-Edicion2023-FernandoHerrera/seccion-07-08-GifsApp/gifs-app"]
+    path = devtalles/AngularDeCeroAExperto-Edicion2023-FernandoHerrera/seccion-07-08-GifsApp/gifs-app
+    url = https://github.com/EzequielMAg/gifs-app.git
