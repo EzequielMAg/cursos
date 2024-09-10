@@ -1,3 +1,7 @@
 [submodule "devtalles/ReactDeCeroAExperto-HooksyMern/04-gif-expert-app"]
     path = devtalles/ReactDeCeroAExperto-HooksyMern/04-gif-expert-app
     url = https://github.com/EzequielMAg/gif-expert-app.git
+
+[submodule "devtalles/AngularDeCeroAExperto-Edicion2023-FernandoHerrera/seccion-04-05-06-Angular/bases"]
+    path = devtalles/AngularDeCeroAExperto-Edicion2023-FernandoHerrera/seccion-04-05-06-Angular/bases
+    url = https://github.com/EzequielMAg/angular-primeros-pasos.git
