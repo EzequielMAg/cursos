@@ -1,6 +1,6 @@
 ## Comunicacion entre componentes - Props
 
-Properties que los functional components reciben, comunmente usadas como props. 
+Properties que los functional components reciben, mas conocidas como props. 
 
 ![alt text](./images/image-13.png)
 

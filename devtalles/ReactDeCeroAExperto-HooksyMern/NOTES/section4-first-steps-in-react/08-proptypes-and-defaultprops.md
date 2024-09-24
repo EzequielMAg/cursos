@@ -1,6 +1,7 @@
 ## Proptypes
 
-Una forma de obligar a que se manden los propiedades definidas en un componente, a si como el tipo de dato. 
+Las proptypes sirven para definirle el TIPO DE DATO a las propiedades que recibe el componente, asi como tambien es una forma de obligar a que se manden tales propiedades.
+
 Para implementar las proptypes si creamos el proyecto con VITE debemos instalarlas manualmente.
 Si lo creamos con CRA (Create React App) al proyecto no hace falta por que ya viene instalado.
 
@@ -15,29 +16,6 @@ Si fuera con npm usariamos: npm install prop-types
 - Por ultimo debemos definir los proptypes en nuestro componente:
 
 ![alt text](./images/image-15.png)
-
-- Y de tal forma exigimos que el tipo de dato que se envie sea un string. No asi que sea enviado... Js al ser un lenguaje flexible no tira error si no se le manda ninguna property.
-Si queremos que si o si se envie un valor le agregamos "isRequired", quedando asi:
-    >  title: PropTypes.string.isRequired!
-
-
-## Proptypes
-
-Una forma de obligar a que se manden los propiedades definidas en un componente, a si como el tipo de dato. 
-Para implementar las proptypes si creamos el proyecto con VITE debemos instalarlas manualmente.
-Si lo creamos con CRA (Create React App) al proyecto no hace falta por que ya viene instalado.
-
-- Como yo lo hice con VITE (y con yarn) usamos el siguiente comando para:
-    > yarn add prop-types
-
-Si fuera con npm usariamos: npm install prop-types
-
-- Y tambien agregamos la siguiente importacion en el archivo de nuestro componente:
-    > import PropTypes from 'prop-types'
-
-- Por ultimo debemos definir los proptypes en nuestro componente:
-
-![alt text](images/image-15.png)
 
 - Y de tal forma exigimos que el tipo de dato que se envie sea un string. No asi que sea enviado... Js al ser un lenguaje flexible no tira error si no se le manda ninguna property.
 Si queremos que si o si se envie un valor le agregamos "isRequired", quedando asi:

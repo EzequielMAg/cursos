@@ -2,7 +2,7 @@
 
 ![alt text](./images/image-11.png)
 
-Obviamente hay que importarlo en nuestro main.jsx si queremos aplicar tales estilos, sino seria un archivo css flotando en el universo de nuestro proyecto.. 
+Obviamente hay que importarlo, en nuestro main.jsx (en este caso) si queremos aplicar tales estilos, sino seria un archivo css flotando en el universo de nuestro proyecto.. 
 
 ![alt text](./images/image-12.png)
 

@@ -36,4 +36,6 @@ AAA:
     - Ej: que algo cambie, algo incremente o bien que nada suceda.
 
 
-.......
+### Mitos
+
+![alt text](image-2.png)
