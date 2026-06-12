@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi primera web</title>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>TITULO H1</h1>
+
+  <table style="width: 500px;">
+    <thead>
+      <tr><!-- TABLE ROW -->
+        <th>PRODUCTO</th>
+        <th>PRECIO</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hola beats</td>
+        <td>GRATIS</td>
+      </tr>
+      <tr>
+        <td>Chanchito feliz</td>
+        <td>19.9 USD</td>
+      </tr>
+      <tr>
+        <td>Una caja con productos varios</td>
+        <td>99.9 USD</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <td></td>
+      <td>TOTAL 119.8 USD</td>
+    </tfoot>
+  </table>
+
+  <!--* UL ES LISTA NO ORDENADA -->
+  <ul>
+    <li>Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+    <li>Elemento 5</li>
+  </ul>
+
+  <!--* OL ES LISTA ORDENADA -->
+  <ol>
+    <li value="50">Elemento 1</li>
+    <li>Elemento 2</li>
+    <li>Elemento 3</li>
+    <li>Elemento 4</li>
+    <li>Elemento 5</li>
+    <!--* CONCATENANDO UNA LISTA -->
+    <li>
+      <ol>
+        <li style="list-style-type: lower-alpha;">sub elemento 1</li>
+        <li style="list-style-type: lower-roman;">sub elemento 2</li>
+        <li style="list-style-type: lower-alpha;">sub elemento 3</li>
+      </ol>
+    </li>
+  </ol>
+
+  |
+
+  <form action="/formulario" method="post">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" />
+    <br>
+    <label for="nombre">Apellido</label>
+    <input type="text" id="apellido" name="apellido" placeholder="Ingrese el apellido" />
+    <br>
+    <label for="comentario">Comentario</label>
+    <textarea cols="50" rows="10" name="comentario" id="comentario" placeholder="Ingrese comentario"></textarea>
+    <br>
+    <!--* una forma de hacer un boton pero este es por default para enviar nomas, no nos deja escribir otra cosa en el texto del boton -->
+    <!-- <input type="submit"> -->
+
+    <!--* forma mas adecuada con sus distintos tipos  -->
+    <button type="button">TIPO BOTÓN</button>
+    <button type="reset">TIPO RESET</button>
+    <button type="submit">TIPO SUBMIT</button>
+  </form>
+  <br>
+
+  <h2>TITULO H2</h2>
+  <h3>TITULO H3</h3>
+  <h4>TITULO H4</h4>
+  <h5>TITULO H5</h5>
+  <h6>TITULO H6</h6>
+
+  <hr>
+
+  <p>PARRAFO</p>
+
+  <section>
+    <p>Acá otro parrafo</p>
+    <p>Y otro parafo</p>
+    <p>y otro mas...</p>
+    <p>Este texto es <span style="color:blue">mucho mas largo</span> y es para mostrar <br>la etiqueta span!</p>
+  </section>
+
+  <!-- Etiqueta de hipervinculo -->
+  <a href="https://www.youtube.com/">Ir a youtube</a>
+
+  <!-- Con el atributo "target" se abre en una pestaña diferente -->
+  <a target="_blank" href="https://www.google.com/">Ir a google</a>
+
+  <!--  Para mostrar una iamgen -->
+  <img src="./img/coffee.png" alt="coffee" />
+
+</body>
+
+</html>
