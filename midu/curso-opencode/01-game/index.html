@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Neon Dash</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div id="score">0</div>
+  <div id="best">BEST: <span id="best-val">0</span></div>
+  <button id="sound">&#x1F50A;</button>
+
+  <div id="menu" class="overlay">
+    <h1>NEON DASH</h1>
+    <p>Press <kbd>SPACE</kbd> or tap to jump</p>
+    <p class="sub">Dodge the obstacles. How far can you go?</p>
+    <button id="play-btn">PLAY</button>
+  </div>
+
+  <div id="over" class="overlay hidden">
+    <h1>GAME OVER</h1>
+    <p>Score: <span id="final-score">0</span></p>
+    <p>Best: <span id="final-best">0</span></p>
+    <p class="sub">Press SPACE or tap to restart</p>
+    <button id="restart-btn">PLAY AGAIN</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
