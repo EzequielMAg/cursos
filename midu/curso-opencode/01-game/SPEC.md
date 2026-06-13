@@ -10,14 +10,36 @@ Neon Dash is a small one-button browser arcade game built with HTML, CSS, and va
 - Feel responsive and satisfying with particles, screen shake, sound, flashes, and score feedback.
 - Keep obstacle spacing fair so the player always has enough time to land and jump again.
 - Use no external dependencies and no build step.
-- Keep the code readable and split across `index.html`, `style.css`, and `script.js`.
+- Keep the code readable and split into focused ES modules under `js/`.
 
 ## Files
 
 - `index.html`: Canvas, score UI, sound toggle, start screen, and game-over screen.
 - `style.css`: Dark neon visual style, overlay layout, buttons, score styling, and small UI transitions.
-- `script.js`: Game loop, player physics, obstacle spawning, collision, scoring, particles, screen shake, audio, and state management.
 - `package.json`: Local dev command using `serve` through `npx`.
+
+### JS Module Architecture (`js/`)
+
+All game logic is split into ES modules with no build step, loaded via `<script type="module">`:
+
+| File | Responsibility | Key Exports |
+|---|---|---|
+| `main.js` | Canvas setup, game loop, resize listener, boot sequence | — (entry point) |
+| `constants.js` | Shared numeric constants (physics, difficulty, layout) | `STATE`, `PLAYER`, `SPEED_*`, `GROUND_RATIO`, etc. |
+| `game.js` | State machine, scoring, collision, shake/flash effects, UI orchestration | `init`, `resize`, `handleJump`, `update`, `draw`, `getState` |
+| `player.js` | Player physics, trail rendering, jump with particles/audio | `player` object |
+| `obstacles.js` | Obstacle spawning (fair gap logic), movement, passing detection | `obstacles[]`, `resetObstacles`, `updateObstacles`, `drawObstacles` |
+| `input.js` | Keyboard (`Space`/`ArrowUp`), click, and touch dispatch | `setupInput` |
+| `background.js` | Starfield, neon grid, ground line and glow | `drawBackground` |
+| `particles.js` | Particle pool, spawn, physics, and render | `particles[]`, `spawnParticles`, `updateParticles`, `drawParticles` |
+| `audio.js` | Web Audio synth tones, mute toggle | `playJump`, `playScore`, `playCombo`, `playDeath`, `toggleSound` |
+
+### Architecture Rules
+
+- **No circular imports**: `constants.js` has zero imports; leaf modules (`audio.js`, `particles.js`) import only `constants.js`; `game.js` is the sole orchestrator that imports from all feature modules.
+- **Module-scoped state**: Each module owns its mutable state (arrays, counters). `game.js` calls reset functions (`resetObstacles()`, `clearParticles()`) rather than manipulating their internals directly.
+- **Explicit parameters**: Functions like `player.update(groundY)` and `updateObstacles(speed, playerX, distance, W, groundY)` receive needed values as arguments instead of capturing globals, making dependencies clear.
+- **Event dispatch in `game.js`**: The `handleJump` function lives in `game.js` because it needs `groundY` and game state; `input.js` merely forwards DOM events to `handleJump`.
 
 ## Controls
 
